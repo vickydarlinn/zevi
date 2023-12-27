@@ -1,7 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
 $backgroundImage: "./assets/background.jpeg";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
 body {
   background-image: url($backgroundImage);
   background-size: cover;
   height: 100vh;
+  font-size: 1.8rem;
+  background-color: #d7e0ff;
+  font-family: "Inter", sans-serif;
 }

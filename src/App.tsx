@@ -1,7 +1,12 @@
 import React from "react";
+import SearchBar from "./components/searchBar/SearchBar.tsx";
 
 const App = () => {
-  return <div></div>;
+  return (
+    <>
+      <SearchBar />
+    </>
+  );
 };
 
 export default App;
