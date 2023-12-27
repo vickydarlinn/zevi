@@ -1,0 +1,7 @@
+$backgroundImage: "./assets/background.jpeg";
+
+body {
+  background-image: url($backgroundImage);
+  background-size: cover;
+  height: 100vh;
+}
