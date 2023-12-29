@@ -1,0 +1,20 @@
+// home page section
+$backgroundImage: "../assets/background.jpeg";
+
+.home_page_section {
+  background-image: url($backgroundImage);
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 20rem 0;
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Adjust opacity as needed */
+    z-index: -1; /* Places the overlay behind the content */
+  }
+}

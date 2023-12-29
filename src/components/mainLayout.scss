@@ -1,0 +1,22 @@
+.logo {
+  position: fixed;
+  top: 2rem;
+  right: 3rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    justify-content: center;
+    position: fixed;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    width: 100px;
+  }
+}

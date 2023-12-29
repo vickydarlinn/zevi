@@ -1,8 +1,15 @@
 import React from "react";
 import searchImage from "../assets/searchIcon.png";
 import { useNavigate } from "react-router-dom";
+import "./searchBar.scss";
 
-const SearchBar = ({ query, setQuery, submitHandler, setClick }) => {
+const SearchBar = ({
+  query,
+  setQuery,
+  submitHandler,
+  setClick,
+  showOutline = false,
+}) => {
   const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -16,7 +23,7 @@ const SearchBar = ({ query, setQuery, submitHandler, setClick }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="search_bar">
+    <form onSubmit={handleSubmit} className={`search_bar `}>
       <div>
         <input
           type="text"
@@ -24,6 +31,7 @@ const SearchBar = ({ query, setQuery, submitHandler, setClick }) => {
           onChange={handleChange}
           placeholder="Search"
           onClick={setClick}
+          className={`${showOutline && "black_outline"}`}
         />
         <img src={searchImage} alt="" />
       </div>

@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SuggestionCard from "../components/SuggestionCard.tsx";
 import SearchBar from "../components/SearchBar.tsx";
 import { useLocation, useNavigate } from "react-router-dom";
+import "./homePage.scss";
 
 const HomePage = () => {
   const location = useLocation();
@@ -22,7 +22,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <>
+    <section className="home_page_section">
       <SearchBar
         query={searchTerm}
         setQuery={setSearchTerm}
@@ -30,7 +30,7 @@ const HomePage = () => {
         setClick={() => setShowSuggestions(true)}
       />
       {showSuggestions && <SuggestionCard />}
-    </>
+    </section>
   );
 };
 
