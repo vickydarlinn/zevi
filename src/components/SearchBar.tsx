@@ -1,41 +1,33 @@
 import React from "react";
-import { useState } from "react";
 import searchImage from "../assets/searchIcon.png";
-import SuggestionCard from "./SuggestionCard.tsx";
+import { useNavigate } from "react-router-dom";
 
-const SearchBar = () => {
-  const [searchTerm, setSearchTerm] = useState<string>("");
-  const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
+const SearchBar = ({ query, setQuery, submitHandler, setClick }) => {
+  const navigate = useNavigate();
 
-  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(searchTerm);
-  };
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setShowSuggestions(false);
-    setSearchTerm(e.target.value);
+    submitHandler(query);
   };
 
-  const handleShowSuggestions = () => {
-    setShowSuggestions(true);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
+    navigate(`?query=${e.target.value}`);
   };
 
   return (
-    <>
-      <form onSubmit={submitHandler} className="search_bar">
-        <div>
-          <input
-            onChange={handleChange}
-            onClick={handleShowSuggestions}
-            value={searchTerm}
-            type="text"
-            placeholder="Search"
-          />
-          <img src={searchImage} alt="" />
-        </div>
-      </form>
-      {showSuggestions && <SuggestionCard />}
-    </>
+    <form onSubmit={handleSubmit} className="search_bar">
+      <div>
+        <input
+          type="text"
+          value={query}
+          onChange={handleChange}
+          placeholder="Search"
+          onClick={setClick}
+        />
+        <img src={searchImage} alt="" />
+      </div>
+    </form>
   );
 };
 

@@ -14,7 +14,7 @@ const SuggestionCard = () => {
                 <div>
                   <img
                     key={index}
-                    src={faker.image.url({ height: 300, width: 200 })}
+                    src={faker.image.url({ height: 250, width: 175 })}
                     alt=""
                   />
                   <div>{faker.commerce.product()}</div>

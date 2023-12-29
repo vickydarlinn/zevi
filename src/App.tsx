@@ -1,10 +1,15 @@
 import React from "react";
-import SearchBar from "./components/SearchBar.tsx";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage.tsx";
+import StorePage from "./pages/StorePage.tsx";
 
 const App = () => {
   return (
     <>
-      <SearchBar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/store" element={<StorePage />} />
+      </Routes>
     </>
   );
 };
