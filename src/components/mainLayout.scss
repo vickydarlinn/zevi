@@ -13,7 +13,7 @@
 @media (max-width: 768px) {
   .logo {
     justify-content: center;
-    position: fixed;
+    position: relative;
     left: 50%;
     top: 10px;
     transform: translateX(-50%);
